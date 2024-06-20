@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://busvqoc8j8whc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wkmxn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vg26q"]
+size = Vector3(1, 0.0625, 1)
+
+[node name="Player" type="CharacterBody3D"]
+
+[node name="Body_Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_wkmxn")
+
+[node name="Feet_Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.46875, 0)
+shape = SubResource("BoxShape3D_vg26q")
+
+[node name="Rotator" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Rotator"]
+
+[node name="Hud" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
